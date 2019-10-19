@@ -1,7 +1,7 @@
 \name{RobGARCHBoot}
 \alias{RobGARCHBoot}
 \title{
-Robust GARCH estimator
+Robust GARCH Estimator
 }
 \description{
 Robust Bootstrap procedure of Trucíos et al. (2017)
@@ -38,12 +38,17 @@ The funcion returns two lists with the empirical H-steps-ahead bootstrap densiti
 Carlos Trucíos
 }
 \examples{
-boot = RobGARCHBoot(returnsexample, n.boot = 1000, n.ahead = 1)
+# boot = RobGARCHBoot(returnsexample, n.boot = 1000, n.ahead = 1)
 # One-step-ahead VaR 1\%
-VaR1 = quantile(boot[[1]], prob = 0.01)
+# VaR1 = quantile(boot[[1]], prob = 0.01)
 # Forecast Intervals 95\%: Returns
-quantile(boot[[1]], prob = c(0.025, 0.975))
+# quantile(boot[[1]], prob = c(0.025, 0.975))
 # Forecast Intervals 95\%: Squared volatilities
-quantile(boot[[2]], prob = c(0.025, 0.975))
+# quantile(boot[[2]], prob = c(0.025, 0.975))
 }
-\keyword{Bootstrap, Forecast Intervals, GARCH, Jump, Outliers, Robustness}
+\keyword{Bootstrap}
+\keyword{GARCH}
+\keyword{Forecast Intervals}
+\keyword{Jump}
+\keyword{Outliers}
+\keyword{Robustness}

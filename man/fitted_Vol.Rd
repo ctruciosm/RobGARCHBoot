@@ -1,7 +1,7 @@
 \name{fitted_Vol}
 \alias{fitted_Vol}
 \title{
-Estimated volatility
+Estimated Volatility
 }
 \description{
 Using the robust estimated parameters of Boudt et al. (2013) and Trucíos et at. (2017), we obtain the estimated volatility.
@@ -32,8 +32,11 @@ The funcion returns the estimated volatility from 1 to T+1.
 Carlos Trucíos
 }
 \examples{
-param = ROBUSTGARCH(returnsexample)
-vol = fitted_Vol(param, returnsexample)
+# param = ROBUSTGARCH(returnsexample)
+# vol = fitted_Vol(param, returnsexample)
 }
 
-\keyword{GARCH, Jump, Outliers, Robustness}
+\keyword{GARCH}
+\keyword{Jump}
+\keyword{Outliers}
+\keyword{Robustness}

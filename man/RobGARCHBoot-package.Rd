@@ -2,7 +2,7 @@
 \alias{RobGARCHBoot-package}
 \docType{package}
 \title{
-  Robust bootstrap forecast densities for GARCH models
+  Robust Bootstrap Forecast Densities for GARCH Models
 }
 \description{
   Bootstrap forecast densities for returns and volatilities using the robust residual-based bootstrap procedure of Trucíos et at. (2017). The package also includes the robust GARCH estimator of Boudt et al. (2013) with the modification introduced by Trucíos et at. (2017).
@@ -24,4 +24,11 @@ Carlos Trucíos <ctrucios@gmail.com>
   
   Trucíos, Carlos. Forecasting Bitcoin risk measures: A robust approach. International Journal of Forecasting 35.3 (2019): 836-847.
 }
-\keyword{Bootstrap, Forecast Intervals, GARCH, Jump, Outliers, Robustness, Value-at-Risk (VaR), Volatility}
+\keyword{Bootstrap}
+\keyword{Forecast Intervals}
+\keyword{GARCH}
+\keyword{Jump}
+\keyword{Outliers}
+\keyword{Robustness}
+\keyword{Value-at-Risk (VaR)}
+\keyword{Volatility}

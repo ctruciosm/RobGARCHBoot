@@ -1,7 +1,7 @@
 \name{ROBUSTGARCH}
 \alias{ROBUSTGARCH}
 \title{
-Robust GARCH estimator
+Robust GARCH Estimator
 }
 \description{
 Robust GARCH estimator of Boudt et al. (2013) with the modification introduced by Trucíos et at. (2017).
@@ -29,8 +29,11 @@ The funcion returns the estimated parameters.
 Carlos Trucíos
 }
 \examples{
-param = ROBUSTGARCH(returnsexample*100)
-param
+# param = ROBUSTGARCH(returnsexample*100)
+# param
 }
 
-\keyword{GARCH, Jump, Outliers, Robustness}
+\keyword{GARCH}
+\keyword{Jump}
+\keyword{Outliers}
+\keyword{Robustness}
