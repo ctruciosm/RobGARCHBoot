@@ -1,0 +1,5 @@
+useDynLib(RobGARCHBoot, .registration=TRUE)
+exportPattern("^[[:alpha:]]+")
+importFrom(Rcpp, evalCpp)
+importFrom("stats", "constrOptim", "median")
+import(RcppArmadillo)
