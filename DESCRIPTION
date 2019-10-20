@@ -2,7 +2,7 @@ Package: RobGARCHBoot
 Type: Package
 Title: Robust Bootstrap Forecast Densities for GARCH Models
 Version: 1.0
-Date: 2019-20-18
+Date: 2019-10-20
 Author: Carlos Trucios
 Maintainer: Carlos Trucios <ctrucios@gmail.com>
 Description: Bootstrap forecast densities for returns and volatilities using the robust residual-based bootstrap procedure of Trucios, Hotta and Ruiz (2017).
