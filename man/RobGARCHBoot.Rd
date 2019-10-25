@@ -1,10 +1,10 @@
 \name{RobGARCHBoot}
 \alias{RobGARCHBoot}
 \title{
-Robust GARCH Estimator
+Robust GARCH bootstrap procedeure
 }
 \description{
-Robust Bootstrap procedure of Trucíos et al. (2017)
+Robust GARCH (Generalized Autoregressive Conditional Heteroskedasticity) Bootstrap procedure of Trucíos et al. (2017)
 }
 \usage{
 RobGARCHBoot(data, n.boot = 1000, n.ahead = 1)
@@ -25,7 +25,7 @@ Numbers of steps-ahead. By default n.ahead = 1
 More details can be found in Trucíos et at. (2017), Hotta and Trucíos (2018) and Trucíos (2019).
 }
 \value{
-The funcion returns two lists with the empirical H-steps-ahead bootstrap densities for returns and squared volatilities.
+The function returns two lists with the empirical H-steps-ahead bootstrap densities for returns and squared volatilities.
 }
 \references{
   Hotta, Luiz Koodi, and Carlos Trucíos. Inference in (M)GARCH models in the presence of additive outliers: Specification, estimation, and prediction. Advances in Mathematics and Applications. Springer, Cham, 2018. 179-202.
@@ -38,14 +38,18 @@ The funcion returns two lists with the empirical H-steps-ahead bootstrap densiti
 Carlos Trucíos
 }
 \examples{
-# boot = RobGARCHBoot(returnsexample, n.boot = 1000, n.ahead = 1)
-# One-step-ahead VaR 1\%
-# VaR1 = quantile(boot[[1]], prob = 0.01)
-# Forecast Intervals 95\%: Returns
-# quantile(boot[[1]], prob = c(0.025, 0.975))
-# Forecast Intervals 95\%: Squared volatilities
-# quantile(boot[[2]], prob = c(0.025, 0.975))
-}
+\donttest{
+# Robust bootstrap forecast densities for returns and volatilities
+boot = RobGARCHBoot(returnsexample, n.boot = 1000, n.ahead = 1)
+
+# Obtaining the forecast intervals for returns (95\%)
+quantile(boot[[1]], prob = c(0.025, 0.975))
+# Obtaining the forecast intervals for volatilities (95\%)
+quantile(boot[[2]], prob = c(0.025, 0.975))
+
+# Risk measures can also be obtained
+VaR1 = quantile(boot[[1]], prob = 0.01)
+}}
 \keyword{Bootstrap}
 \keyword{GARCH}
 \keyword{Forecast Intervals}

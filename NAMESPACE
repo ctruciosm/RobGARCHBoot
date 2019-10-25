@@ -1,4 +1,6 @@
 useDynLib(RobGARCHBoot, .registration=TRUE)
 exportPattern("^[[:alpha:]]+")
+#export(ROBUSTGARCH, fitted_Vol , RobGARCHBoot)
+#internal()
 importFrom(Rcpp, evalCpp)
 importFrom("stats", "constrOptim", "median")
