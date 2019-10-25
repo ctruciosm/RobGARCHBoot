@@ -18,7 +18,7 @@ Vector of time series returns.
 More details can be found in Boudt et al. (2013) and Trucíos et at. (2017).
 }
 \value{
-The funcion returns the estimated parameters.
+The function returns the estimated parameters.
 }
 \references{
   Boudt, Kris, Jon Danielsson, and Sébastien Laurent. Robust forecasting of dynamic conditional correlation GARCH models. International Journal of Forecasting 29.2 (2013): 244-257.
@@ -29,8 +29,9 @@ The funcion returns the estimated parameters.
 Carlos Trucíos
 }
 \examples{
-# param = ROBUSTGARCH(returnsexample*100)
-# param
+# Estimating the parameters of the GARCH model in a robust way.
+param = ROBUSTGARCH(returnsexample*100)
+param
 }
 
 \keyword{GARCH}
