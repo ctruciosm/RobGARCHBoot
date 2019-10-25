@@ -21,7 +21,7 @@ Vector of time series returns.
 More details can be found in Boudt et al. (2013) and Trucíos et at. (2017).
 }
 \value{
-The funcion returns the estimated volatility from 1 to T+1.
+The function returns the estimated volatility from 1 to T+1.
 }
 \references{
   Boudt, Kris, Jon Danielsson, and Sébastien Laurent. Robust forecasting of dynamic conditional correlation GARCH models. International Journal of Forecasting 29.2 (2013): 244-257.
@@ -32,8 +32,10 @@ The funcion returns the estimated volatility from 1 to T+1.
 Carlos Trucíos
 }
 \examples{
-# param = ROBUSTGARCH(returnsexample)
-# vol = fitted_Vol(param, returnsexample)
+# Using the Bitcoin daily returns, we estimate the parameter of the GARCH model in a robust way
+param = ROBUSTGARCH(returnsexample)
+# With the estimated parameters, we estimate the volatiltiy in a robust way
+vol = fitted_Vol(param, returnsexample)
 }
 
 \keyword{GARCH}
