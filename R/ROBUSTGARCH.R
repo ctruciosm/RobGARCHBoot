@@ -1,3 +1,5 @@
+#' @noRd
+#' @importFrom stats median
 medianB = function(r){
   k = 30
   n = length(r)
@@ -10,7 +12,7 @@ medianB = function(r){
   return(list(med,mad))
 }
 
-
+#' @export
 fitted_Vol = function(theta,r){
   n= length(r)+1
   h= c()
@@ -26,7 +28,9 @@ fitted_Vol = function(theta,r){
   return(sqrt(h))
 }
 
-
+#' @export
+#' @import Rcpp
+#' @importFrom stats constrOptim
 ROBUSTGARCH = function(y){
   AUX= medianB(y)
   Med = AUX[[1]]

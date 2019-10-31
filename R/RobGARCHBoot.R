@@ -1,3 +1,5 @@
+#' @export
+#' @import Rcpp
 RobGARCHBoot <-
 function(data, n.boot = 1000, n.ahead = 1){
 

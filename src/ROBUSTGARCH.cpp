@@ -3,7 +3,9 @@
 
 using namespace Rcpp;
 
+
 // [[Rcpp::depends(RcppArmadillo)]]
+//' @export
 // [[Rcpp::export]]
 SEXP ROBUSTGARCHloss_RCPP(NumericVector theta, NumericVector r, double sigma2){
   int n = r.size(), k = 3;
@@ -25,6 +27,8 @@ SEXP ROBUSTGARCHloss_RCPP(NumericVector theta, NumericVector r, double sigma2){
   return(wrap(mean(-y + 0.8260*5*log(1+exp(y)/2))));
 }
 
+//' @noRd
+//' @useDynLib RobGARCHBoot
 // [[Rcpp::export]]
 SEXP grid_RCPP(NumericVector y, double sigmaR){
   NumericVector coeff(2),vi(2);
@@ -55,6 +59,8 @@ SEXP grid_RCPP(NumericVector y, double sigmaR){
   return(vi);
 }
 
+//' @noRd
+//' @useDynLib RobGARCHBoot
 // [[Rcpp::export]]
 SEXP resBoot(NumericVector coeff, NumericVector r, double S, double k){
   int n = r.size();
@@ -74,6 +80,8 @@ SEXP resBoot(NumericVector coeff, NumericVector r, double S, double k){
   return(e);
 }
 
+//' @noRd
+//' @useDynLib RobGARCHBoot
 // [[Rcpp::export]]
 SEXP retBoot(NumericVector coeff, double S, NumericVector e, double k){
   int n = e.size();
@@ -100,6 +108,8 @@ SEXP retBoot(NumericVector coeff, double S, NumericVector e, double k){
   return Rcpp::List::create(r,h);
 }
 
+//' @noRd
+//' @useDynLib RobGARCHBoot
 // [[Rcpp::export]]
 SEXP sigma2Boot(NumericVector coeff, NumericVector e, double S, NumericVector r, double k){
   Rcpp::Function sample("sample");
@@ -121,6 +131,8 @@ SEXP sigma2Boot(NumericVector coeff, NumericVector e, double S, NumericVector r,
   return(h);
 }
 
+//' @noRd
+//' @useDynLib RobGARCHBoot
 // [[Rcpp::export]]
 SEXP foreBoot(NumericVector coeff, NumericVector e, NumericVector e2, NumericVector h, NumericVector r, int ahead, double k){
   int n = r.size();
