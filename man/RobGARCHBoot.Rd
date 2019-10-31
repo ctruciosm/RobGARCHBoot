@@ -4,7 +4,7 @@
 Robust GARCH bootstrap procedeure
 }
 \description{
-Robust GARCH (Generalized Autoregressive Conditional Heteroskedasticity) Bootstrap procedure of Trucíos et al. (2017)
+Robust GARCH (Generalized Autoregressive Conditional Heteroskedastic) Bootstrap procedure of Trucíos et al. (2017)
 }
 \usage{
 RobGARCHBoot(data, n.boot = 1000, n.ahead = 1)

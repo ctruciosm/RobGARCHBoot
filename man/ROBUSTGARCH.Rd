@@ -4,7 +4,7 @@
 Robust GARCH Estimator
 }
 \description{
-Robust GARCH (Generalized Autoregressive Conditional Heteroskedasticity) estimator of Boudt et al. (2013) with the modification introduced by Trucíos et at. (2017).
+Robust GARCH (Generalized Autoregressive Conditional Heteroskedastic) estimator of Boudt et al. (2013) with the modification introduced by Trucíos et at. (2017).
 }
 \usage{
 ROBUSTGARCH(y)

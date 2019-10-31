@@ -4,7 +4,7 @@
 Loss function used in GARCH robust estimation.
 }
 \description{
-Loss function used in GARCH (Generalized Autoregressive Conditional Heteroskedasticity) robust estimation.
+Loss function used in GARCH (Generalized Autoregressive Conditional Heteroskedastic) robust estimation.
 }
 \usage{
 ROBUSTGARCHloss_RCPP(theta, r, sigma2)
@@ -38,7 +38,7 @@ Carlos Trucíos
 # Using the Bitcoin daily returns, we estimate the parameter of the GARCH model in a robust way
 param = ROBUSTGARCH(returnsexample)
 # We can evaluate the loss function using the estimated parameters
-ROBUSTGARCHloss_RCPP(param, returnsexample, param[1]/(1-param[2]-param[3]))
+ROBUSTGARCHloss_RCPP(param[2:3], returnsexample, param[1]/(1-param[2]-param[3]))
 }
 
 \keyword{GARCH}
