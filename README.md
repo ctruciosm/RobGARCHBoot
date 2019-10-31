@@ -11,3 +11,11 @@ For applications using the robust estimator, see:
 - Trucíos, C. (2019). Forecasting Bitcoin risk measures: A robust approach. International Journal of Forecasting, 35(3), 836-847.
 - Trucíos, C., Tiwari, A. K., & Alqahtani, F. (2019). Value-at-Risk and Expected Shortfall in Cryptocurrencies' Portfolio: A Vine Copula-based Approach. Available at SSRN 3441892.
 
+
+## Installation
+RobGARCHBoot is not available on CRAN yet, however, you can install the development version using these commands:
+
+install.packages("devtools")
+
+
+devtools::intall_github("ctruciosm/RobGARCHBoot")
