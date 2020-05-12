@@ -12,7 +12,7 @@ For applications of the bootstrap procedure, see:
 For applications using the robust estimator, see:
 
 - Trucíos, C. (2019). Forecasting Bitcoin risk measures: A robust approach. International Journal of Forecasting, 35(3), 836-847.
-- Trucíos, C., Hotta, L. K., and Valls, P. On the robustness of the principal volatility components. Journal of Empirical Finance 52 (2019): 201-219.
+- Trucíos, C., Hotta, L. K., and Valls, P. (2019). On the robustness of the principal volatility components. Journal of Empirical Finance, 52(1), 201-219.
 - Trucíos, C., Tiwari, A. K., & Alqahtani, F. (2020). Value-at-Risk and Expected Shortfall in Cryptocurrencies' Portfolio: A Vine Copula-based Approach. Applied Economics, 52(24), 2580-2593.
 
 
