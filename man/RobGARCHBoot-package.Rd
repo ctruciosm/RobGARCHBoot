@@ -8,9 +8,9 @@
 Bootstrap forecast densities for returns and volatilities using the robust residual-based bootstrap procedure of Trucíos et at. (2017). The package also includes the robust GARCH (Generalized Autoregressive Conditional Heteroskedastic) estimator of Boudt et al. (2013) with the modification introduced by Trucíos et at. (2017).
 }
 \details{
-This package provides a robust bootstrap procedure to obtain forecast densities for both return and volatilities in a GARCH context. The forecast densities are usefull to obtain forecast intervals as well as to estimate risk measures such as Value-at-Risk (VaR).
-Additionally,  we also provide the robust GARCH estimator of Boudt et al. (2013) with the modification introduced by Trucíos et at. (2017). 
-This procedures showed good finite sample properties in both Monte Carlo experiments and empirial data. For a recent implementation of this procedure see Trucíos (2019).
+This package provides a robust bootstrap procedure to obtain forecast densities for both return and volatilities in a GARCH context. The forecast densities are useful to obtain forecast intervals as well as to estimate risk measures such as Value-at-Risk (VaR).
+Additionally, we also provide the robust GARCH estimator of Boudt et al. (2013) with the modification introduced by Trucíos et at. (2017). 
+This procedure showed good finite sample properties in both Monte Carlo experiments and empirical data. For a recent implementation, see Trucíos (2019).
 }
 \author{
 Carlos Trucíos <ctrucios@gmail.com>

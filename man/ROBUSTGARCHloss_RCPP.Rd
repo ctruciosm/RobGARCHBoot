@@ -17,11 +17,11 @@ Vector of robust estimated (or initial values) parameters obtained from ROBUSTGA
 Vector of time series returns.
 }
   \item{sigma2}{
-robust squared volatility estimation (or inital value of squared volatility)
+robust squared volatility estimation (or initial value of squared volatility)
 }
 }
 \details{
-This functions is used in the robust estimation. We can use it to evaluate the value of the loss function using several values of the vector parameters (theta)
+This function is used in the robust estimation. We can use it to evaluate the value of the loss function using several values of the vector parameters (theta)
 }
 \value{
 Returns the value of the loss function

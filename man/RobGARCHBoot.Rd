@@ -22,7 +22,7 @@ Numbers of steps-ahead. By default n.ahead = 1
 
 }
 \details{
-More details can be found in Trucíos et at. (2017), Hotta and Trucíos (2018) and Trucíos (2019).
+More details can be found in Trucíos et at. (2017), Hotta and Trucíos (2018), and Trucíos (2019).
 }
 \value{
 The function returns two lists with the empirical H-steps-ahead bootstrap densities for returns and squared volatilities.

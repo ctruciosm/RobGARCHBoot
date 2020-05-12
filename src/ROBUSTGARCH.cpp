@@ -15,7 +15,7 @@ SEXP ROBUSTGARCHloss_RCPP(NumericVector theta, NumericVector r, double sigma2){
   J[0] = r[0]/sqrt(h[0]);
   
   for(int i=1; i<n; i++){
-    if(abs(J[i-1])<k){
+    if(std::abs(J[i-1])<k){
       h[i]= sigma2*(1-theta[0]-theta[1])+ theta[0]*pow(r[i-1],2)+ theta[1]*h[i-1];
     } else{
       h[i]= sigma2*(1-theta[0]-theta[1])+ theta[0]*1.005018*h[i-1]+ theta[1]*h[i-1];
