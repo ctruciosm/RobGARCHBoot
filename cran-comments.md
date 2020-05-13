@@ -1,1 +1,0 @@
-This is an updated version of RobGARCHBoot 1.0.0, I replaced abs() by std::abs() in my Rcpp function.
