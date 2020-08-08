@@ -1,13 +1,13 @@
-\name{RobGARCHBoot}
-\alias{RobGARCHBoot}
+\name{RobGARCHBootParallel}
+\alias{RobGARCHBootParallel}
 \title{
-Robust GARCH bootstrap procedure
+Parallel implementation of the Robust GARCH bootstrap procedure
 }
 \description{
 Robust GARCH (Generalized Autoregressive Conditional Heteroskedastic) Bootstrap procedure of Trucíos et al. (2017)
 }
 \usage{
-RobGARCHBoot(data, n.boot = 1000, n.ahead = 1)
+RobGARCHBootParallel(data, n.boot = 1000, n.ahead = 1)
 }
 \arguments{
   \item{data}{
@@ -40,7 +40,7 @@ Carlos Trucíos
 \examples{
 \donttest{
 # Robust bootstrap forecast densities for returns and volatilities
-boot = RobGARCHBoot(returnsexample, n.boot = 1000, n.ahead = 1)
+boot = RobGARCHBootParallel(returnsexample, n.boot = 1000, n.ahead = 1)
 
 # Obtaining the forecast intervals for returns (95\%)
 quantile(boot[[1]], prob = c(0.025, 0.975))
