@@ -22,7 +22,7 @@ RobGARCHBoot is available on CRAN, but you can install the latest version using 
 install.packages("devtools")
 
 
-devtools::intall_github("ctruciosm/RobGARCHBoot")
+devtools::install_github("ctruciosm/RobGARCHBoot")
 
 
 ## Comments
