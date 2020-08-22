@@ -2,11 +2,12 @@
 
 Robust bootstrap forecast densities for GARCH models (Trucíos et al; 2017). 
 This R package provides the forecast densities for returns and volatilities which are useful to obtain forecast intervals and risk measures. 
-The package also provides the robust GARCH estimator of Boudt et al. (2013) using the modification proposed by Trucíos et al. (2017)
+The package also provides the robust GARCH estimator of Boudt et al. (2013) using the modification proposed by Trucíos et al. (2017). Additionally, the robust cDCC estimator of Boudt et al. (2013) using the modification proposed by Trucíos et al. (2018) was included. 
 
 For applications of the bootstrap procedure, see:
 
 - Trucíos, C., Hotta, L. K., & Ruiz, E. (2017). Robust bootstrap forecast densities for GARCH returns and volatilities. Journal of Statistical Computation and Simulation, 87(16), 3152-3174.
+- Trucíos, Carlos, Luiz K. Hotta, and Esther Ruiz. Robust bootstrap densities for dynamic conditional correlations: implications for portfolio selection and value-at-risk. Journal of Statistical Computation and Simulation 88.10 (2018): 1976-2000.
 - Trucíos, C. (2019). Forecasting Bitcoin risk measures: A robust approach. International Journal of Forecasting, 35(3), 836-847.
 
 For applications using the robust estimator, see:
@@ -26,4 +27,4 @@ devtools::install_github("ctruciosm/RobGARCHBoot")
 
 
 ## Comments
-In this dev version, a parallel implementation of RobGARCHBoot function was added. The function RobGARCHBootParallel runs in parallel, if you find any bug, let me know.
+In this dev version, a parallel implementation of RobGARCHBoot function was added. The function RobGARCHBootParallel runs in parallel, if you find any bug, let me know. Additionally, the function Robust_cDCC used to estimate the cDCC paramaters was included.
