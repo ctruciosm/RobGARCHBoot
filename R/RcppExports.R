@@ -2,6 +2,7 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 #' @export
+#' @noRd
 ROBUSTGARCHloss_RCPP <- function(theta, r, sigma2) {
     .Call('_RobGARCHBoot_ROBUSTGARCHloss_RCPP', PACKAGE = 'RobGARCHBoot', theta, r, sigma2)
 }
@@ -37,13 +38,12 @@ foreBoot <- function(coeff, e, e2, h, r, ahead, k) {
 }
 
 #' @noRd
-#' @useDynLib RobGARCHBoot
 gridcDCC <- function(Qb, s, sigma) {
     .Call('_RobGARCHBoot_gridcDCC', PACKAGE = 'RobGARCHBoot', Qb, s, sigma)
 }
 
+#' @export
 #' @noRd
-#' @useDynLib RobGARCHBoot
 loglik_cDCC <- function(par, Qb, s, sigma) {
     .Call('_RobGARCHBoot_loglik_cDCC', PACKAGE = 'RobGARCHBoot', par, Qb, s, sigma)
 }

@@ -101,8 +101,6 @@ Robust_cDCC = function(r){
   Qbarra = Q_bar(e)
   parini = gridcDCC(Qbarra,e, sigma_)
   
-  loglik_cDCC(parini, Qbarra, e, sigma_)
-  
   ra = matrix(c(1,0,0,1,-1,-1),ncol=2,byrow=TRUE)
   rb = c(0.00001, 0.00001,-0.9999)
   coef_cDCC = constrOptim(theta = parini, f = loglik_cDCC, grad = NULL, ui = ra, ci = rb, Qb = Qbarra,s = e, sigma = sigma_)$par

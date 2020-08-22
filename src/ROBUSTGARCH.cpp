@@ -6,6 +6,7 @@ using namespace Rcpp;
 
 // [[Rcpp::depends(RcppArmadillo)]]
 //' @export
+//' @noRd
 // [[Rcpp::export]]
 SEXP ROBUSTGARCHloss_RCPP(NumericVector theta, NumericVector r, double sigma2){
   int n = r.size(), k = 3;
@@ -162,7 +163,6 @@ SEXP foreBoot(NumericVector coeff, NumericVector e, NumericVector e2, NumericVec
 
 // [[Rcpp::depends(RcppArmadillo)]]
 //' @noRd
-//' @useDynLib RobGARCHBoot
 // [[Rcpp::export]]
 SEXP gridcDCC(arma::mat Qb,arma::mat s, double sigma){
   NumericVector coeff(2),vi(2);
@@ -171,7 +171,7 @@ SEXP gridcDCC(arma::mat Qb,arma::mat s, double sigma){
   double ml = 100000000, nml;
   double lmalfa1 = (alfa1max-alfa1min)/nalfa1;
   double lmbeta1 = (beta1max-beta1min)/nbeta1;
-  Function loglik_cDCC("loglik_cDCC");
+  Rcpp::Function loglik_cDCC("loglik_cDCC");
   
   for(int nj=0; nj<nalfa1; nj++){
     for(int nk=0; nk<nbeta1; nk++){
@@ -195,8 +195,8 @@ SEXP gridcDCC(arma::mat Qb,arma::mat s, double sigma){
 
 
 // [[Rcpp::depends(RcppArmadillo)]]
+//' @export
 //' @noRd
-//' @useDynLib RobGARCHBoot
 // [[Rcpp::export]]
 SEXP loglik_cDCC(arma::vec par,arma::mat Qb,arma::mat s, double sigma){
   int T = s.n_rows;

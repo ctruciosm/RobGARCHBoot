@@ -8,8 +8,8 @@ Maintainer: Carlos Trucios <ctrucios@gmail.com>
 Description: Bootstrap forecast densities for GARCH (Generalized Autoregressive Conditional Heteroskedastic) returns and volatilities using the robust residual-based bootstrap procedure of Trucios, Hotta and Ruiz (2017) <DOI:10.1080/00949655.2017.1359601>.
 Encoding: UTF-8
 License: GPL (>= 2)
-Depends: R (>= 3.5.0)
-Imports: Rcpp (>= 1.0.1), foreach, doParallel, doRNG
+Depends: R (>= 3.6.0)
+Imports: Rcpp (>= 1.0.5), foreach, doParallel, doRNG
 LinkingTo: Rcpp, RcppArmadillo
 LazyData: true
 RoxygenNote: 6.1.1
