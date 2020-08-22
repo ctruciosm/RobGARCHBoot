@@ -32,6 +32,7 @@ Carlos Trucíos <ctrucios@gmail.com>
 \keyword{Bootstrap}
 \keyword{Forecast Intervals}
 \keyword{GARCH}
+\keyword{cDCC}
 \keyword{Jump}
 \keyword{Outliers}
 \keyword{Robustness}
