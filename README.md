@@ -22,4 +22,8 @@ RobGARCHBoot is available on CRAN, but you can install the latest version using 
 install.packages("devtools")
 
 
-devtools::intall_github("ctruciosm/RobGARCHBoot")
+devtools::install_github("ctruciosm/RobGARCHBoot")
+
+
+## Comments
+In this dev version, a parallel implementation of RobGARCHBoot function was added. The function RobGARCHBootParallel runs in parallel, if you find any bug, let me know.
