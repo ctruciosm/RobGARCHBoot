@@ -30,8 +30,7 @@ Carlos Trucíos
 }
 \examples{
 # Estimating the parameters of the GARCH model in a robust way.
-param = ROBUSTGARCH(returnsexample*100)
-param
+ROBUSTGARCH(returnsexample*100)
 }
 
 \keyword{GARCH}

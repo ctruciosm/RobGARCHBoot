@@ -44,6 +44,7 @@ ROBUSTGARCH = function(y){
   rb <- c(0.00001, 0.00001,-0.9999)
   param <- constrOptim(theta = ini, f = ROBUSTGARCHloss_RCPP, grad = NULL, ui = ra, ci = rb, sigma2 = sigma2R, r = y, outer.iterations = 400, outer.eps = 1e-07)$par
   param = c(sigma2R*(1-param[1]-param[2]),param[1],param[2])
+  return(param)
 }
 
 
