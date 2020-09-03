@@ -110,4 +110,30 @@ Robust_cDCC = function(r){
 }
 
 
+#' @export
+#' @import Rcpp
+fitted_cDCC = function(r, Qbar, params){
+  Dim = dim(r)
+  n = Dim[1]
+  p = Dim[2]
+  H = list()
+  vol = matrix(0,ncol = p, nrow = n+1)
+  e = matrix(0, ncol = p, nrow = n)
+  for (i in 1:p){
+    coef = params[(3*(i-1)+1):(3*i)]
+    vol[,i] = fitted_Vol(coef, r[,i])
+    e[,i] = r[,i]/vol[1:n,i]
+  }
+  
+  dccpar = params[(3*p+1):(3*p+2)]
+  R = cor_cDCC(dccpar,Qbar,e)
+  
+  for(j in 1:(n+1)){
+    H[[j]] = diag(vol[j,])%*%R[,,j]%*%diag(vol[j,])
+  }
+  
+  return(H)
+}
+
+
 

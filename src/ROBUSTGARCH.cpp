@@ -163,6 +163,7 @@ SEXP foreBoot(NumericVector coeff, NumericVector e, NumericVector e2, NumericVec
 
 // [[Rcpp::depends(RcppArmadillo)]]
 //' @noRd
+//' @useDynLib RobGARCHBoot
 // [[Rcpp::export]]
 SEXP gridcDCC(arma::mat Qb,arma::mat s, double sigma){
   NumericVector coeff(2),vi(2);
@@ -231,3 +232,40 @@ SEXP loglik_cDCC(arma::vec par,arma::mat Qb,arma::mat s, double sigma){
   }
   return Rcpp::wrap(mean(lR3));
 }
+
+
+// [[Rcpp::depends(RcppArmadillo)]]
+//' @noRd
+// [[Rcpp::export]]
+SEXP cor_cDCC(arma::vec par,arma::mat Qb,arma::mat s){
+  int T = s.n_rows;
+  int K = s.n_cols;
+  Rcpp::Function pchisq("pchisq");
+  Rcpp::Function qchisq("qchisq");
+  arma::vec d(T+1);
+  arma::mat R(K,K),Qt(K,K),Pt(K,K), iPt(K,K);
+  arma::cube Rpred(K,K,T+1);
+  double CN = K/(K*as<double>(pchisq(qchisq(0.9973,K),K+2)) + as<double>(qchisq(0.9973,K))*(1-0.9973));
+  R = Qb;
+  Qt = Qb;
+  d[0] = arma::conv_to<double>::from(s.row(0)*inv_sympd(R)*s.row(0).t());
+  Pt = sqrt(diagmat(Qt));
+  Rpred.slice(0) = R;
+  for(int t = 1; t<T+1; t++){
+    if (1<(as<double>(qchisq(0.9973,K))/d[t-1])){ 
+      Qt = (1-par[0]-par[1])*Qb+ par[0]*CN*Pt*s.row(t-1).t()*s.row(t-1)*Pt +par[1]*Qt;
+    } else {
+      Qt = (1-par[0]-par[1])*Qb + par[0]*CN*K/d[t-1]*Pt*s.row(t-1).t()*s.row(t-1)*Pt +par[1]*Qt;
+    }
+    Pt = sqrt(diagmat(Qt));
+    iPt = Pt.i();
+    R =  iPt*Qt*iPt;
+    Rpred.slice(t) = R;
+    if(t<T){
+      d[t] = arma::conv_to<double>::from(s.row(t)*R.i()*s.row(t).t());
+    }
+  } 
+  return Rcpp::wrap(Rpred);
+}
+
+

@@ -38,6 +38,7 @@ foreBoot <- function(coeff, e, e2, h, r, ahead, k) {
 }
 
 #' @noRd
+#' @useDynLib RobGARCHBoot
 gridcDCC <- function(Qb, s, sigma) {
     .Call('_RobGARCHBoot_gridcDCC', PACKAGE = 'RobGARCHBoot', Qb, s, sigma)
 }
@@ -46,5 +47,10 @@ gridcDCC <- function(Qb, s, sigma) {
 #' @noRd
 loglik_cDCC <- function(par, Qb, s, sigma) {
     .Call('_RobGARCHBoot_loglik_cDCC', PACKAGE = 'RobGARCHBoot', par, Qb, s, sigma)
+}
+
+#' @noRd
+cor_cDCC <- function(par, Qb, s) {
+    .Call('_RobGARCHBoot_cor_cDCC', PACKAGE = 'RobGARCHBoot', par, Qb, s)
 }
 

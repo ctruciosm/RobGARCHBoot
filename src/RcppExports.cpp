@@ -118,6 +118,19 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// cor_cDCC
+SEXP cor_cDCC(arma::vec par, arma::mat Qb, arma::mat s);
+RcppExport SEXP _RobGARCHBoot_cor_cDCC(SEXP parSEXP, SEXP QbSEXP, SEXP sSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::vec >::type par(parSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type Qb(QbSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type s(sSEXP);
+    rcpp_result_gen = Rcpp::wrap(cor_cDCC(par, Qb, s));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_RobGARCHBoot_ROBUSTGARCHloss_RCPP", (DL_FUNC) &_RobGARCHBoot_ROBUSTGARCHloss_RCPP, 3},
@@ -128,6 +141,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_RobGARCHBoot_foreBoot", (DL_FUNC) &_RobGARCHBoot_foreBoot, 7},
     {"_RobGARCHBoot_gridcDCC", (DL_FUNC) &_RobGARCHBoot_gridcDCC, 3},
     {"_RobGARCHBoot_loglik_cDCC", (DL_FUNC) &_RobGARCHBoot_loglik_cDCC, 4},
+    {"_RobGARCHBoot_cor_cDCC", (DL_FUNC) &_RobGARCHBoot_cor_cDCC, 3},
     {NULL, NULL, 0}
 };
 
