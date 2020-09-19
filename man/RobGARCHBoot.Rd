@@ -7,7 +7,7 @@ Robust GARCH bootstrap procedure
 Robust GARCH (Generalized Autoregressive Conditional Heteroskedastic) Bootstrap procedure of Trucíos et al. (2017)
 }
 \usage{
-RobGARCHBoot(data, n.boot = 1000, n.ahead = 1)
+RobGARCHBoot(data, n.boot = 1000, n.ahead = 1, ins = FALSE)
 }
 \arguments{
   \item{data}{
@@ -19,13 +19,16 @@ Number of bootsrap replications. By default n.boot = 1000
   \item{n.ahead}{
 Numbers of steps-ahead. By default n.ahead = 1
 }
+  \item{ins}{
+If TRUE in-sample bootstrap returns are calculated. By default ins = FALSE
+}
 
 }
 \details{
 More details can be found in Trucíos et at. (2017), Hotta and Trucíos (2018), and Trucíos (2019).
 }
 \value{
-The function returns two lists with the empirical H-steps-ahead bootstrap densities for returns and squared volatilities.
+The function returns two lists with the empirical H-steps-ahead bootstrap densities for returns and squared volatilities. If ins = TRUE, a third list with in-sample bootstrap returns is also provided.
 }
 \references{
   Hotta, Luiz Koodi, and Carlos Trucíos. Inference in (M)GARCH models in the presence of additive outliers: Specification, estimation, and prediction. Advances in Mathematics and Applications. Springer, Cham, 2018. 179-202.

@@ -1,9 +1,9 @@
 #' @export
 #' @import Rcpp
 RobGARCHBoot <-
-function(data, n.boot = 1000, n.ahead = 1){
+function(data, n.boot = 1000, n.ahead = 1, ins = FALSE){
 
-# -----------------------
+  # -----------------------
   coeff = ROBUSTGARCH(data)
   epps_c = scale(resBoot(coeff, data, coeff[1]/(1-coeff[2]-coeff[3]), 9),center = TRUE, scale = FALSE)
 
@@ -12,7 +12,7 @@ function(data, n.boot = 1000, n.ahead = 1){
 	Coeff_b = matrix(NA, ncol = n.coeff, nrow = n.boot)                                                                                                    
 	y_boot = matrix(NA, ncol = n.boot, nrow = N)                                                 
 	yp = s2p = matrix(NA, ncol = n.ahead, nrow = n.boot)
-		
+	rins = matrix(NA, ncol=n.boot, nrow = N)	
 		
 # -----------------------
 for (b in 1:n.boot) {
@@ -37,10 +37,19 @@ for (b in 1:n.boot) {
   # -----------------------
   e_b = sample(epps_c, n.ahead, replace = TRUE)
   forecast = foreBoot(Coeff_b[b,],  e_b, epps_c,  s2_boot_B , data,  n.ahead, 9)
+  
+  if(ins == TRUE){
+    e_in = sample(epps_c, N, replace = TRUE)
+    rins[,b] = e_in*sqrt(s2_boot_B)
+  }
    
   yp[b,1:n.ahead] = forecast[[1]][(N+1):(N+n.ahead)]
   s2p[b,1:n.ahead]= forecast[[2]][(N+1):(N+n.ahead)]
 
 }
-return(list(yp,s2p))
+if(ins == TRUE){
+  return(list(yp,s2p, rins))
+}	else{
+  return(list(yp,s2p))
+}
 }
