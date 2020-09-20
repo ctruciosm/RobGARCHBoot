@@ -44,7 +44,7 @@ gridcDCC <- function(Qb, s, sigma) {
 }
 
 #' @export
-#' @noRd
+#' @useDynLib RobGARCHBoot
 loglik_cDCC <- function(par, Qb, s, sigma) {
     .Call('_RobGARCHBoot_loglik_cDCC', PACKAGE = 'RobGARCHBoot', par, Qb, s, sigma)
 }

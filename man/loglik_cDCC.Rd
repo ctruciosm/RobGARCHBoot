@@ -39,7 +39,10 @@ Carlos Trucíos
 }
 \examples{
 \donttest{
+\dontrun{
+# Used inside the Robust_cDCC function
 loglik_cDCC(par,Qb, s, sigma)
+}
 }
 }
 

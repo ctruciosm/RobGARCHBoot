@@ -197,7 +197,7 @@ SEXP gridcDCC(arma::mat Qb,arma::mat s, double sigma){
 
 // [[Rcpp::depends(RcppArmadillo)]]
 //' @export
-//' @noRd
+//' @useDynLib RobGARCHBoot
 // [[Rcpp::export]]
 SEXP loglik_cDCC(arma::vec par,arma::mat Qb,arma::mat s, double sigma){
   int T = s.n_rows;
