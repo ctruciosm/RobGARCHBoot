@@ -91,46 +91,6 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// gridcDCC
-SEXP gridcDCC(arma::mat Qb, arma::mat s, double sigma);
-RcppExport SEXP _RobGARCHBoot_gridcDCC(SEXP QbSEXP, SEXP sSEXP, SEXP sigmaSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< arma::mat >::type Qb(QbSEXP);
-    Rcpp::traits::input_parameter< arma::mat >::type s(sSEXP);
-    Rcpp::traits::input_parameter< double >::type sigma(sigmaSEXP);
-    rcpp_result_gen = Rcpp::wrap(gridcDCC(Qb, s, sigma));
-    return rcpp_result_gen;
-END_RCPP
-}
-// loglik_cDCC
-SEXP loglik_cDCC(arma::vec par, arma::mat Qb, arma::mat s, double sigma);
-RcppExport SEXP _RobGARCHBoot_loglik_cDCC(SEXP parSEXP, SEXP QbSEXP, SEXP sSEXP, SEXP sigmaSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< arma::vec >::type par(parSEXP);
-    Rcpp::traits::input_parameter< arma::mat >::type Qb(QbSEXP);
-    Rcpp::traits::input_parameter< arma::mat >::type s(sSEXP);
-    Rcpp::traits::input_parameter< double >::type sigma(sigmaSEXP);
-    rcpp_result_gen = Rcpp::wrap(loglik_cDCC(par, Qb, s, sigma));
-    return rcpp_result_gen;
-END_RCPP
-}
-// cor_cDCC
-SEXP cor_cDCC(arma::vec par, arma::mat Qb, arma::mat s);
-RcppExport SEXP _RobGARCHBoot_cor_cDCC(SEXP parSEXP, SEXP QbSEXP, SEXP sSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< arma::vec >::type par(parSEXP);
-    Rcpp::traits::input_parameter< arma::mat >::type Qb(QbSEXP);
-    Rcpp::traits::input_parameter< arma::mat >::type s(sSEXP);
-    rcpp_result_gen = Rcpp::wrap(cor_cDCC(par, Qb, s));
-    return rcpp_result_gen;
-END_RCPP
-}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_RobGARCHBoot_ROBUSTGARCHloss_RCPP", (DL_FUNC) &_RobGARCHBoot_ROBUSTGARCHloss_RCPP, 3},
@@ -139,9 +99,6 @@ static const R_CallMethodDef CallEntries[] = {
     {"_RobGARCHBoot_retBoot", (DL_FUNC) &_RobGARCHBoot_retBoot, 4},
     {"_RobGARCHBoot_sigma2Boot", (DL_FUNC) &_RobGARCHBoot_sigma2Boot, 5},
     {"_RobGARCHBoot_foreBoot", (DL_FUNC) &_RobGARCHBoot_foreBoot, 7},
-    {"_RobGARCHBoot_gridcDCC", (DL_FUNC) &_RobGARCHBoot_gridcDCC, 3},
-    {"_RobGARCHBoot_loglik_cDCC", (DL_FUNC) &_RobGARCHBoot_loglik_cDCC, 4},
-    {"_RobGARCHBoot_cor_cDCC", (DL_FUNC) &_RobGARCHBoot_cor_cDCC, 3},
     {NULL, NULL, 0}
 };
 

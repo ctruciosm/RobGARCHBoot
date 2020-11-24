@@ -4,7 +4,7 @@
 Estimated Volatility
 }
 \description{
-Using the robust estimated parameters of Boudt et al. (2013) and Trucíos et at. (2017), we obtain the estimated volatility.
+Using the robust estimated parameters of Boudt et al. (2013) with the modification introduced by Trucíos et at. (2017), we obtain the estimated volatility.
 }
 \usage{
 fitted_Vol(theta,r)
