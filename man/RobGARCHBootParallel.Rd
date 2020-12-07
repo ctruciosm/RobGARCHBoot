@@ -7,7 +7,7 @@ Parallel implementation of the Robust GARCH bootstrap procedure
 Robust GARCH (Generalized Autoregressive Conditional Heteroskedastic) Bootstrap procedure of Trucíos et al. (2017)
 }
 \usage{
-RobGARCHBootParallel(data, n.boot = 1000, n.ahead = 1)
+RobGARCHBootParallel(data, n.boot = 1000, n.ahead = 1, ncl = 2)
 }
 \arguments{
   \item{data}{
@@ -18,6 +18,9 @@ Number of bootsrap replications. By default n.boot = 1000
 }
   \item{n.ahead}{
 Numbers of steps-ahead. By default n.ahead = 1
+}
+  \item{ncl}{
+Numbers of parallel processes. By default ncl = 2
 }
 
 }

@@ -3,7 +3,7 @@
 #' @importFrom parallel detectCores makeCluster stopCluster
 #' @importFrom doParallel registerDoParallel
 RobGARCHBootParallel <-
-function(data, n.boot = 1000, n.ahead = 1){
+function(data, n.boot = 1000, n.ahead = 1, ncl = 2){
 
 # -----------------------
   coeff = ROBUSTGARCH(data)
@@ -15,7 +15,7 @@ function(data, n.boot = 1000, n.ahead = 1){
 
 # -----------------------
 	
- cl <- makeCluster(detectCores(logical = FALSE)-1, setup_strategy = "sequential")
+ cl <- makeCluster(ncl, setup_strategy = "sequential")
  registerDoParallel(cl)	
  rsboot = foreach(b = 1:n.boot, .combine = rbind)	%dorng% {
    bootstrap_replication(data, epps_c, coeff, n.coeff, n.ahead, N)
