@@ -29,12 +29,14 @@ The function returns the estimated parameters and the Qbar matrix
 Carlos Trucíos
 }
 \examples{
+\donttest{
 # Estimating the parameters of the cDCC model in a robust way.
 cDCC = Robust_cDCC(returns3)
 #parameters
 cDCC[[1]]
 #Qbar
 cDCC[[2]]
+}
 }
 
 \keyword{DCC}
