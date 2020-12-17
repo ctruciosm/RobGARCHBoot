@@ -32,7 +32,7 @@ Returns the value of the loss function
 \references{
   Boudt, Kris, Jon Danielsson, and Sébastien Laurent. Robust forecasting of dynamic conditional correlation GARCH models. International Journal of Forecasting 29.2 (2013): 244-257.
   
-  Trucíos, Carlos, Luiz K. Hotta, and Esther Ruiz. Robust bootstrap densities for dynamic conditional correlations: implications for portfolio selection and value-at-risk. Journal of Statistical Computation and Simulation, 88.10 (2018): 1976-2000.
+  Trucíos, Carlos, Luiz K. Hotta, and Esther Ruiz. Robust bootstrap densities for dynamic conditional correlations: implications for portfolio selection and value-at-risk. Journal of Statistical Computation and Simulation 88.10 (2018): 1976-2000.
 }
 \author{
 Carlos Trucíos
@@ -53,7 +53,7 @@ e = matrix(c(returns3[,1]/vol1[1:nrow(returns3)],
 loglik_cDCC(param[10:11],Qbar,e, 0.8309765)      
 }
 }
-\keyword{GARCH}
+\keyword{DCC}
 \keyword{Jump}
 \keyword{Loss function}
 \keyword{Outliers}
