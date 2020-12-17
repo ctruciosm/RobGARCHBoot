@@ -24,10 +24,10 @@ teste
 }
 }
 \details{
-This function is used in the robust estimation. We can use it to evaluate the value of the loss function using several values of the vector parameters (theta)
+This function is used in the robust estimation. We can use it to evaluate the value of the robust cDCC loss function using several values of the vector parameters.
 }
 \value{
-Returns the value of the loss function
+Returns the value of the loss function.
 }
 \references{
   Boudt, Kris, Jon Danielsson, and Sébastien Laurent. Robust forecasting of dynamic conditional correlation GARCH models. International Journal of Forecasting 29.2 (2013): 244-257.

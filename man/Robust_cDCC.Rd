@@ -18,7 +18,7 @@ Matrix of time series returns.
 More details can be found in Boudt et al. (2013) and Trucíos et at. (2018).
 }
 \value{
-The function returns the estimated parameters and the Qbar matrix
+The function returns the estimated parameters and the Qbar matrix.
 }
 \references{
   Boudt, Kris, Jon Danielsson, and Sébastien Laurent. Robust forecasting of dynamic conditional correlation GARCH models. International Journal of Forecasting 29.2 (2013): 244-257.
